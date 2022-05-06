@@ -1,6 +1,6 @@
 # facebook_flutter
 
-A new Flutter project.
+Application created for educational purposes only,
 
 ## Getting Started
 
@@ -14,3 +14,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+# Copyright
+The name of Facebook, be iandrust found reserved for the company Meta.
+
