@@ -23,7 +23,7 @@ class ShorcutsHomeStories extends StatelessWidget {
           ),
         ],
       ),
-      height: 170,
+      height: 180,
     );
   }
 }
@@ -41,7 +41,12 @@ class StorieContainerBox extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       child: child,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), color: Colors.grey),
+          borderRadius: BorderRadius.circular(10),
+          color: Color.fromARGB(108, 158, 158, 158),
+          border: Border.all(
+            color: Color.fromARGB(33, 0, 0, 0),
+            width: 1,
+          )),
       width: 100,
       alignment: Alignment.topCenter,
     );
@@ -53,8 +58,8 @@ class StorieCreateStorieBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 90,
+    final img = Container(
+      height: 95,
       alignment: Alignment.topCenter,
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -64,6 +69,38 @@ class StorieCreateStorieBox extends StatelessWidget {
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(10), topRight: Radius.circular(10)),
       ),
+    );
+
+    final text = Container(
+      padding: EdgeInsets.all(5),
+      alignment: Alignment.bottomCenter,
+      child: Text(
+        "Create story",
+        style: TextStyle(
+          fontWeight: FontWeight.w600,
+          fontSize: 14,
+        ),
+      ),
+    );
+
+    final add = Container(
+        alignment: Alignment(0, 0.2),
+        child: CircleAvatar(
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
+            size: 20,
+          ),
+          backgroundColor: Colors.blue,
+          maxRadius: 15,
+        ));
+
+    return Stack(
+      children: [
+        img,
+        add,
+        text,
+      ],
     );
   }
 }
