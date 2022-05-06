@@ -27,6 +27,10 @@ class HomeScrollAll extends StatelessWidget {
         HomePostWidget(),
         MinitShorcutsHome(),
         Container(
+          height: 10,
+          color: Color.fromARGB(141, 158, 158, 158),
+        ),
+        Container(
           height: 1000,
           color: Colors.white,
         )
