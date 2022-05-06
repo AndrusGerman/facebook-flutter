@@ -43,9 +43,9 @@ class StorieContainerBox extends StatelessWidget {
       child: child,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Color.fromARGB(255, 211, 211, 211),
+          color: const Color.fromARGB(255, 211, 211, 211),
           border: Border.all(
-            color: Color.fromARGB(33, 0, 0, 0),
+            color: const Color.fromARGB(33, 0, 0, 0),
             width: 1,
           )),
       width: 100,

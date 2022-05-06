@@ -6,9 +6,9 @@ class MinitShorcutsHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(75, 158, 158, 158),
+      color: const Color.fromARGB(75, 158, 158, 158),
       height: 60,
-      padding: EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       alignment: Alignment.center,
       child: ListView(
         scrollDirection: Axis.horizontal,
@@ -60,22 +60,22 @@ class MinitShorcutsHomeIcon extends StatelessWidget {
             color: Colors.black87,
           ),
         ),
-        margin: EdgeInsets.only(left: 2),
+        margin: const EdgeInsets.only(left: 2),
       )
     ]);
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black26, width: 1),
         borderRadius: BorderRadius.circular(30),
         color: Colors.white,
       ),
       width: 90,
-      alignment: Alignment(0, 0),
+      alignment: const Alignment(0, 0),
       child: Container(
         child: content,
-        margin: EdgeInsets.only(left: 10),
+        margin: const EdgeInsets.only(left: 10),
       ),
     );
   }

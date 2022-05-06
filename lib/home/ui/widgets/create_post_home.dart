@@ -11,24 +11,24 @@ class HomePostWidget extends StatelessWidget {
 
     final boxProfile = Container(
       child: profileImg,
-      margin: EdgeInsets.only(left: 10),
+      margin: const EdgeInsets.only(left: 10),
     );
 
     final addImageIcon = Container(
-      margin: EdgeInsets.symmetric(horizontal: 5),
-      child: Icon(
+      margin: const EdgeInsets.symmetric(horizontal: 5),
+      child: const Icon(
         Icons.image_search,
         color: Colors.green,
         size: 33,
       ),
-      alignment: Alignment(0, -0.2),
+      alignment: const Alignment(0, -0.2),
     );
 
     final contentRow = IntrinsicHeight(
       child: Row(
         children: [
           boxProfile,
-          Expanded(
+          const Expanded(
             child: PostCreateButton(),
           ),
           addImageIcon,
@@ -38,11 +38,11 @@ class HomePostWidget extends StatelessWidget {
     );
     final content = Container(
       child: contentRow,
-      padding: EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10),
     );
     return Container(
       child: content,
-      margin: EdgeInsets.only(top: 116),
+      margin: const EdgeInsets.only(top: 116),
     );
   }
 }
@@ -61,17 +61,17 @@ class _PostCreateButtonState extends State<PostCreateButton> {
       decoration: BoxDecoration(
           border: Border.all(color: Colors.black26, width: 1),
           borderRadius: BorderRadius.circular(30)),
-      child: Text(
+      child: const Text(
         "What's on your mind?",
         style: TextStyle(
           fontWeight: FontWeight.w400,
           fontSize: 16,
         ),
       ),
-      alignment: Alignment(-0.4, 0),
+      alignment: const Alignment(-0.4, 0),
     );
     return Container(
-      padding: EdgeInsets.only(left: 10, right: 10, top: 3, bottom: 3),
+      padding: const EdgeInsets.only(left: 10, right: 10, top: 3, bottom: 3),
       child: boxSearch,
     );
   }

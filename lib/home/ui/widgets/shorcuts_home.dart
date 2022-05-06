@@ -19,9 +19,9 @@ class ShorcutsHome extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: content,
-          decoration: BoxDecoration(color: Colors.white, boxShadow: [
+          decoration: const BoxDecoration(color: Colors.white, boxShadow: [
             BoxShadow(
               color: Colors.black26,
               blurRadius: 1,
@@ -29,7 +29,7 @@ class ShorcutsHome extends StatelessWidget {
             ),
           ]),
         ),
-        ShorcutsHomeStories(),
+        const ShorcutsHomeStories(),
       ],
     );
   }
@@ -59,7 +59,7 @@ class ShorcutsHomeButton extends StatelessWidget {
     );
 
     final blueBar = Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.blue,
       ),
       //padding: EdgeInsets.only(top: 10),

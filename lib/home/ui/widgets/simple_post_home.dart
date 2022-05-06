@@ -48,18 +48,18 @@ class SimplePostHomeHeader extends StatelessWidget {
         profileImg,
         Expanded(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
             alignment: Alignment.centerLeft,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   userName,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
+                const Text(
                   "Jost now ",
                   style: TextStyle(color: Colors.black45),
                 ),
@@ -76,10 +76,10 @@ class SimplePostHomeHeader extends StatelessWidget {
         children: [
           postM,
           Container(
-            padding: EdgeInsets.only(top: 8),
+            padding: const EdgeInsets.only(top: 8),
             child: Text(
               message,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 14,
               ),
@@ -152,7 +152,7 @@ class SimplePostHomeActionsButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: Container(
-      padding: EdgeInsets.only(left: 25),
+      padding: const EdgeInsets.only(left: 25),
       alignment: Alignment.center,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
