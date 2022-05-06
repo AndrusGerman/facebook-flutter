@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.facebook_flutter">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="facebook_flutter"
         android:name="${applicationName}"
