@@ -35,11 +35,13 @@ class HomeScrollAll extends StatelessWidget {
             urlImg: 'urlImg',
             index: index + 1);
 
+        // Is First Item
         if (index == 0) {
           return Column(
             children: [HomeScrollAllHeaderPost(), post],
           );
         }
+        // Is Normal post
         return Column(
           children: [SeparatorItemHome(), post],
         );
