@@ -1,3 +1,4 @@
+import 'package:facebook_flutter/widgets/user_circle_img.dart';
 import 'package:flutter/material.dart';
 
 class HomePostWidget extends StatelessWidget {
@@ -5,17 +6,8 @@ class HomePostWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final profileImg = Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/img/profile.png"),
-          fit: BoxFit.contain,
-        ),
-        shape: BoxShape.circle,
-      ),
-      height: 45,
-      width: 45,
-    );
+    const profileImg =
+        UserCircleIMG(assets: AssetImage("assets/img/profile.png"), size: 45);
 
     final boxProfile = Container(
       child: profileImg,

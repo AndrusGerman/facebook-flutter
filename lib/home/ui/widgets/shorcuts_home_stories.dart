@@ -1,3 +1,4 @@
+import 'package:facebook_flutter/widgets/user_circle_img.dart';
 import 'package:flutter/material.dart';
 
 class ShorcutsHomeStories extends StatelessWidget {
@@ -42,7 +43,7 @@ class StorieContainerBox extends StatelessWidget {
       child: child,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Color.fromARGB(108, 158, 158, 158),
+          color: Color.fromARGB(255, 211, 211, 211),
           border: Border.all(
             color: Color.fromARGB(33, 0, 0, 0),
             width: 1,
@@ -84,15 +85,25 @@ class StorieCreateStorieBox extends StatelessWidget {
     );
 
     final add = Container(
-        alignment: Alignment(0, 0.2),
-        child: CircleAvatar(
-          child: Icon(
-            Icons.add,
-            color: Colors.white,
-            size: 20,
+        alignment: Alignment(0, 0.25),
+        child: Container(
+          child: const CircleAvatar(
+            child: Icon(
+              Icons.add,
+              color: Colors.white,
+              size: 20,
+            ),
+            backgroundColor: Colors.blue,
+            maxRadius: 15,
           ),
-          backgroundColor: Colors.blue,
-          maxRadius: 15,
+          decoration: BoxDecoration(
+            color: Color.fromARGB(255, 211, 211, 211),
+            border: Border.all(
+                color: Color.fromARGB(255, 211, 211, 211), width: 2.5),
+            borderRadius: BorderRadius.all(
+              Radius.circular(30),
+            ),
+          ),
         ));
 
     return Stack(
@@ -110,6 +121,26 @@ class StorieFriendsBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final profileImgNotBorder = Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(30)),
+          border: Border.all(
+            color: Colors.transparent,
+            width: 1,
+          )),
+      child:
+          UserCircleIMG(assets: AssetImage("assets/img/profile.png"), size: 40),
+    );
+    final profileImg = Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(30)),
+          border: Border.all(
+            color: Colors.blue,
+            width: 1.5,
+          )),
+      child: profileImgNotBorder,
+    );
+
     return Stack(
       children: [
         Container(
@@ -123,7 +154,7 @@ class StorieFriendsBox extends StatelessWidget {
         ),
         Container(
           child: Text(
-            "Maria Vtg",
+            "Primi Aleman",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w400,
@@ -133,6 +164,11 @@ class StorieFriendsBox extends StatelessWidget {
           alignment: Alignment.bottomLeft,
           padding: EdgeInsets.all(7),
         ),
+        Container(
+          child: profileImg,
+          alignment: Alignment.topLeft,
+          padding: EdgeInsets.all(7),
+        )
       ],
     );
   }
