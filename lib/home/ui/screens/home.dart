@@ -1,4 +1,5 @@
 import 'package:facebook_flutter/home/ui/widgets/create_post_home.dart';
+import 'package:facebook_flutter/home/ui/widgets/minin_shorcuts_home.dart';
 import 'package:facebook_flutter/widgets/app_bar_title.dart';
 import 'package:flutter/material.dart';
 
@@ -24,8 +25,8 @@ class HomeScrollAll extends StatelessWidget {
     return ListView(
       children: [
         HomePostWidget(),
+        MinitShorcutsHome(),
         Container(
-          width: 50,
           height: 1000,
           color: Colors.white,
         )
