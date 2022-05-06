@@ -1,7 +1,14 @@
 import 'package:facebook_flutter/home/ui/screens/home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  // Flutter transparent bar
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.dark,
+      statusBarIconBrightness: Brightness.dark));
+
   runApp(const MyApp());
 }
 
