@@ -1,14 +1,14 @@
 import 'package:facebook_flutter/widgets/app_bar_notifier.dart';
 import 'package:flutter/material.dart';
 
-class AppBarWidget extends StatefulWidget {
-  const AppBarWidget({Key? key}) : super(key: key);
+class AppBarIconsContainer extends StatefulWidget {
+  const AppBarIconsContainer({Key? key}) : super(key: key);
 
   @override
-  State<AppBarWidget> createState() => _AppBarWidgetState();
+  State<AppBarIconsContainer> createState() => _AppBarIconsContainerState();
 }
 
-class _AppBarWidgetState extends State<AppBarWidget> {
+class _AppBarIconsContainerState extends State<AppBarIconsContainer> {
   late AppBarClickNotifier _appBarNotifier;
   @override
   void initState() {
