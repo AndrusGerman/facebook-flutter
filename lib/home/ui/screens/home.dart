@@ -1,9 +1,7 @@
 import 'package:facebook_flutter/home/ui/widgets/create_post_home.dart';
 import 'package:facebook_flutter/home/ui/widgets/minin_shorcuts_home.dart';
-import 'package:facebook_flutter/home/ui/widgets/post_home_builder.dart';
 import 'package:facebook_flutter/home/ui/widgets/separator_item_home.dart';
 import 'package:facebook_flutter/home/ui/widgets/shorcuts_home.dart';
-import 'package:facebook_flutter/home/ui/widgets/shorcuts_home_stories.dart';
 import 'package:facebook_flutter/home/ui/widgets/simple_post_home.dart';
 import 'package:facebook_flutter/widgets/app_bar_title.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: [
+      body: Stack(children: const [
         HomeScrollAll(),
         AppBarAllContent(),
       ]),
@@ -29,24 +27,29 @@ class HomeScrollAll extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) {
-        final post = SimplePostHome(
-            userName: 'AndrusCodex',
-            message: 'Xdd',
-            urlImg: 'urlImg',
-            index: index + 1);
+        final post = generatePost(index);
 
         // Is First Item
         if (index == 0) {
           return Column(
-            children: [HomeScrollAllHeaderPost(), post],
+            children: [const HomeScrollAllHeaderPost(), post],
           );
         }
         // Is Normal post
         return Column(
-          children: [SeparatorItemHome(), post],
+          children: [const SeparatorItemHome(), post],
         );
       },
       itemCount: 500,
+    );
+  }
+
+  generatePost(int index) {
+    return SimplePostHome(
+      userName: 'AndrusGerman',
+      message: 'Thi is my post N`${index + 1}',
+      urlImg: 'urlImg',
+      index: (index + 20),
     );
   }
 }
@@ -57,7 +60,7 @@ class HomeScrollAllHeaderPost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
+      children: const [
         HomePostWidget(),
         MinitShorcutsHome(),
         SeparatorItemHome(),
