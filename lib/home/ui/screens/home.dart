@@ -2,6 +2,7 @@ import 'package:facebook_flutter/home/ui/widgets/create_post_home.dart';
 import 'package:facebook_flutter/home/ui/widgets/minin_shorcuts_home.dart';
 import 'package:facebook_flutter/home/ui/widgets/separator_item_home.dart';
 import 'package:facebook_flutter/home/ui/widgets/shorcuts_home.dart';
+import 'package:facebook_flutter/home/ui/widgets/shorcuts_home_stories.dart';
 import 'package:facebook_flutter/widgets/app_bar_title.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,7 @@ class HomeScrollAll extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: [
+      children: const [
         HomePostWidget(),
         MinitShorcutsHome(),
         SeparatorItemHome(),
