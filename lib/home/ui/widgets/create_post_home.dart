@@ -50,7 +50,7 @@ class HomePostWidget extends StatelessWidget {
     );
     return Container(
       child: content,
-      margin: EdgeInsets.only(top: 150),
+      margin: EdgeInsets.only(top: 116),
     );
   }
 }

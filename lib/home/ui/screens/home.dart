@@ -9,9 +9,27 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(children: [
+        HomeScrollAll(),
         AppBarAllContent(),
-        HomePostWidget(),
       ]),
+    );
+  }
+}
+
+class HomeScrollAll extends StatelessWidget {
+  const HomeScrollAll({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        HomePostWidget(),
+        Container(
+          width: 50,
+          height: 1000,
+          color: Colors.white,
+        )
+      ],
     );
   }
 }
