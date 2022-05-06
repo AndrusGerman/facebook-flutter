@@ -47,7 +47,7 @@ class HomeScrollAll extends StatelessWidget {
   generatePost(int index) {
     return SimplePostHome(
       userName: 'AndrusGerman',
-      message: 'Thi is my post N`${index + 1}',
+      message: 'Thi is my post №${index + 1}',
       urlImg: 'urlImg',
       index: (index + 20),
     );
