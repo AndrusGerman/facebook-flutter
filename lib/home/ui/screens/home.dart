@@ -1,5 +1,6 @@
 import 'package:facebook_flutter/home/ui/widgets/create_post_home.dart';
 import 'package:facebook_flutter/home/ui/widgets/minin_shorcuts_home.dart';
+import 'package:facebook_flutter/home/ui/widgets/post_home_builder.dart';
 import 'package:facebook_flutter/home/ui/widgets/separator_item_home.dart';
 import 'package:facebook_flutter/home/ui/widgets/shorcuts_home.dart';
 import 'package:facebook_flutter/home/ui/widgets/shorcuts_home_stories.dart';
@@ -26,31 +27,39 @@ class HomeScrollAll extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: const [
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        final post = SimplePostHome(
+            userName: 'AndrusCodex',
+            message: 'Xdd',
+            urlImg: 'urlImg',
+            index: index + 1);
+
+        if (index == 0) {
+          return Column(
+            children: [HomeScrollAllHeaderPost(), post],
+          );
+        }
+        return Column(
+          children: [SeparatorItemHome(), post],
+        );
+      },
+      itemCount: 500,
+    );
+  }
+}
+
+class HomeScrollAllHeaderPost extends StatelessWidget {
+  const HomeScrollAllHeaderPost({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
         HomePostWidget(),
         MinitShorcutsHome(),
         SeparatorItemHome(),
         ShorcutsHome(),
-        SeparatorItemHome(),
-        SimplePostHome(
-            userName: 'AndrusCodex',
-            message: 'Xdd',
-            urlImg: 'urlImg',
-            index: 1),
-        SeparatorItemHome(),
-        SimplePostHome(
-            userName: 'Primi Aleman',
-            message: 'Xdd',
-            urlImg: 'urlImg',
-            index: 2),
-        SimplePostHome(
-            userName: 'Primi Aleman',
-            message: 'Xdd',
-            urlImg: 'urlImg',
-            index: 3),
-        FakeHomeWhiteContent(),
-        SeparatorItemHome(),
       ],
     );
   }
