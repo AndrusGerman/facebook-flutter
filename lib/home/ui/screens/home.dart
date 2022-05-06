@@ -3,6 +3,7 @@ import 'package:facebook_flutter/home/ui/widgets/minin_shorcuts_home.dart';
 import 'package:facebook_flutter/home/ui/widgets/separator_item_home.dart';
 import 'package:facebook_flutter/home/ui/widgets/shorcuts_home.dart';
 import 'package:facebook_flutter/home/ui/widgets/shorcuts_home_stories.dart';
+import 'package:facebook_flutter/home/ui/widgets/simple_post_home.dart';
 import 'package:facebook_flutter/widgets/app_bar_title.dart';
 import 'package:flutter/material.dart';
 
@@ -31,6 +32,23 @@ class HomeScrollAll extends StatelessWidget {
         MinitShorcutsHome(),
         SeparatorItemHome(),
         ShorcutsHome(),
+        SeparatorItemHome(),
+        SimplePostHome(
+            userName: 'AndrusCodex',
+            message: 'Xdd',
+            urlImg: 'urlImg',
+            index: 1),
+        SeparatorItemHome(),
+        SimplePostHome(
+            userName: 'Primi Aleman',
+            message: 'Xdd',
+            urlImg: 'urlImg',
+            index: 2),
+        SimplePostHome(
+            userName: 'Primi Aleman',
+            message: 'Xdd',
+            urlImg: 'urlImg',
+            index: 3),
         FakeHomeWhiteContent(),
         SeparatorItemHome(),
       ],
