@@ -1,3 +1,4 @@
+import 'package:facebook_flutter/widgets/app_bart.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,11 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
               offset: Offset(0.2, 0.3),
             )
           ], color: Colors.white),
-          child: Container(
-            width: screenWidth,
-            height: double.infinity,
-            padding: const EdgeInsets.only(left: 15),
-            child: const HomeTitleContent(),
+          child: Stack(
+            children: const [HomeTitleContent(), AppBarWidget()],
           ),
         )
       ]),
@@ -50,16 +48,18 @@ class HomeTitleContent extends StatelessWidget {
         fontWeight: FontWeight.bold,
       ),
     );
-    final screenWidth = MediaQuery.of(context).size.width;
 
     final pagePosition = IntrinsicHeight(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: titleText,
+            child: Container(
+              padding: const EdgeInsets.only(left: 15),
+              child: titleText,
+            ),
           ),
-          Expanded(
+          const Expanded(
             child: HomeTitleIconsListPrimari(),
           ),
         ],
@@ -70,20 +70,6 @@ class HomeTitleContent extends StatelessWidget {
       child: pagePosition,
       margin: EdgeInsets.only(top: 50),
     );
-
-    // return Row(
-    //   children: [
-    //     Row(
-    //       children: [
-    //         Expanded(
-    //           child: titleText,
-    //           //width: screenWidth / 2,
-    //         ),
-    //         Expanded(child: Text("x"))
-    //       ],
-    //     )
-    //   ],
-    // );
   }
 }
 
