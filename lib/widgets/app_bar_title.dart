@@ -7,7 +7,6 @@ class AppBarAllContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-
     return Stack(children: [
       Container(
           height: 150,
@@ -20,7 +19,9 @@ class AppBarAllContent extends StatelessWidget {
               offset: Offset(0.2, 0.3),
             )
           ], color: Colors.white),
-          child: AppBarAllContent())
+          child: Stack(
+            children: const [AppBarTitle(), AppBarIconsContainer()],
+          ))
     ]);
   }
 }
