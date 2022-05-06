@@ -153,7 +153,10 @@ class _AppBarIconButtonState extends State<AppBarIconButton> {
   }
 
   onPressed() {
-    setPressedMode(!widget.isPressed);
+    if (widget.isPressed) {
+      return;
+    }
+    setPressedMode(true);
     widget.appBarNotifier.setMenuClick(widget.index);
   }
 }
