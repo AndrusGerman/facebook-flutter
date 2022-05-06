@@ -1,5 +1,7 @@
 import 'package:facebook_flutter/home/ui/widgets/create_post_home.dart';
 import 'package:facebook_flutter/home/ui/widgets/minin_shorcuts_home.dart';
+import 'package:facebook_flutter/home/ui/widgets/separator_item_home.dart';
+import 'package:facebook_flutter/home/ui/widgets/shorcuts_home.dart';
 import 'package:facebook_flutter/widgets/app_bar_title.dart';
 import 'package:flutter/material.dart';
 
@@ -26,15 +28,23 @@ class HomeScrollAll extends StatelessWidget {
       children: [
         HomePostWidget(),
         MinitShorcutsHome(),
-        Container(
-          height: 10,
-          color: Color.fromARGB(141, 158, 158, 158),
-        ),
-        Container(
-          height: 1000,
-          color: Colors.white,
-        )
+        SeparatorItemHome(),
+        ShorcutsHome(),
+        FakeHomeWhiteContent(),
+        SeparatorItemHome(),
       ],
+    );
+  }
+}
+
+class FakeHomeWhiteContent extends StatelessWidget {
+  const FakeHomeWhiteContent({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 1000,
+      color: Colors.white,
     );
   }
 }
