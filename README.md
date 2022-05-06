@@ -16,5 +16,4 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 # Copyright
-The name of Facebook, be iandrust found reserved for the company Meta.
-
+The Facebook name is reserved for the Meta company.
