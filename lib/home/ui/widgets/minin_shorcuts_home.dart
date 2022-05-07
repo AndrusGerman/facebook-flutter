@@ -6,7 +6,7 @@ class MinitShorcutsHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(75, 158, 158, 158),
+      color: Color.fromARGB(31, 158, 158, 158),
       height: 60,
       padding: const EdgeInsets.symmetric(vertical: 10),
       alignment: Alignment.center,
