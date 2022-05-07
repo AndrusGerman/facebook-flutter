@@ -1,5 +1,6 @@
 import 'package:facebook_flutter/start_router/controller/app_bar_notifier.dart';
 import 'package:facebook_flutter/start_router/ui/widgets/app_bar_icons.dart';
+import 'package:facebook_flutter/widget/global_icon_button_title.dart';
 import 'package:flutter/material.dart';
 
 class AppBarAllContent extends StatelessWidget {
@@ -59,7 +60,10 @@ class AppBarTitle extends StatelessWidget {
             ),
           ),
           const Expanded(
-            child: HomeTitleIconsListPrimari(),
+            child: GlbalIconButtonTitle(
+              iconFirst: Icons.search,
+              iconLast: Icons.sms_sharp,
+            ),
           ),
         ],
       ),
@@ -68,51 +72,6 @@ class AppBarTitle extends StatelessWidget {
     return Container(
       child: pagePosition,
       margin: EdgeInsets.only(top: 50),
-    );
-  }
-}
-
-class HomeTitleIconsListPrimari extends StatelessWidget {
-  const HomeTitleIconsListPrimari({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    const sizeIcon = 24.0;
-    const circleColor = Color.fromARGB(255, 236, 236, 236);
-    const search = CircleAvatar(
-      backgroundColor: circleColor,
-      child: Icon(
-        Icons.search,
-        size: sizeIcon,
-        color: Colors.black,
-      ),
-    );
-
-    const chatMessager = CircleAvatar(
-      backgroundColor: circleColor,
-      child: Icon(
-        Icons.sms_sharp,
-        size: sizeIcon,
-        color: Colors.black,
-      ),
-    );
-
-    return Container(
-      alignment: Alignment.topLeft,
-      child: Row(
-        //crossAxisAlignment: CrossAxisAlignment.end,
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: const [
-          Padding(
-            padding: EdgeInsets.only(right: 15),
-            child: search,
-          ),
-          Padding(
-            padding: EdgeInsets.only(right: 10),
-            child: chatMessager,
-          )
-        ],
-      ),
     );
   }
 }
