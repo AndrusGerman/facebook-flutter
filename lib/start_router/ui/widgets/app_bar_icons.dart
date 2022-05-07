@@ -4,28 +4,15 @@ import 'package:facebook_flutter/start_router/ui/widgets/app_bar_icons_profile.d
 import 'package:flutter/material.dart';
 
 class AppBarIconsContainer extends StatefulWidget {
-  const AppBarIconsContainer({Key? key}) : super(key: key);
+  final AppBarClickMenuNotifier appBarNotifier;
+  const AppBarIconsContainer({Key? key, required this.appBarNotifier})
+      : super(key: key);
 
   @override
   State<AppBarIconsContainer> createState() => _AppBarIconsContainerState();
 }
 
 class _AppBarIconsContainerState extends State<AppBarIconsContainer> {
-  late AppBarClickMenuNotifier _appBarNotifier;
-  @override
-  void initState() {
-    _appBarNotifier = AppBarClickMenuNotifier();
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _appBarNotifier.dispose();
-    // TODO: implement dispose
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     final content = IntrinsicHeight(
@@ -35,37 +22,36 @@ class _AppBarIconsContainerState extends State<AppBarIconsContainer> {
           AppBarIconButton(
             iconPressed: Icons.home,
             iconDefault: Icons.home_outlined,
-            isPressed: true,
             index: 0,
-            appBarNotifier: _appBarNotifier,
+            appBarNotifier: widget.appBarNotifier,
           ),
           AppBarIconButton(
             iconPressed: Icons.movie,
             iconDefault: Icons.movie_outlined,
             index: 1,
-            appBarNotifier: _appBarNotifier,
+            appBarNotifier: widget.appBarNotifier,
           ),
           AppBarIconButton(
             iconPressed: Icons.shop,
             iconDefault: Icons.shop_outlined,
             index: 2,
-            appBarNotifier: _appBarNotifier,
+            appBarNotifier: widget.appBarNotifier,
           ),
           AppBarIconButton(
             iconPressed: Icons.place,
             iconDefault: Icons.place_outlined,
             index: 3,
-            appBarNotifier: _appBarNotifier,
+            appBarNotifier: widget.appBarNotifier,
           ),
           AppBarIconButton(
             iconPressed: Icons.notifications,
             iconDefault: Icons.notifications_outlined,
             index: 4,
-            appBarNotifier: _appBarNotifier,
+            appBarNotifier: widget.appBarNotifier,
           ),
           AppBarIconProfileButton(
             index: 5,
-            appBarNotifier: _appBarNotifier,
+            appBarNotifier: widget.appBarNotifier,
           ),
         ],
       ),
@@ -80,7 +66,7 @@ class _AppBarIconsContainerState extends State<AppBarIconsContainer> {
 class AppBarIconButton extends StatefulWidget {
   final IconData iconDefault;
   final IconData iconPressed;
-  late bool isPressed;
+  late bool isPressed = false;
   final int index;
   final AppBarClickMenuNotifier appBarNotifier;
   AppBarIconButton({
@@ -89,7 +75,6 @@ class AppBarIconButton extends StatefulWidget {
     required this.iconPressed,
     required this.index,
     required this.appBarNotifier,
-    this.isPressed = false,
   }) : super(key: key);
 
   @override
@@ -102,15 +87,15 @@ class _AppBarIconButtonState extends State<AppBarIconButton> {
     widget.appBarNotifier.addListener(() {
       if ((widget.appBarNotifier.indexMenu != widget.index) &&
           widget.isPressed) {
-        setPressedMode(false);
+        setState(() {});
       }
     });
-    // TODO: implement initState
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    widget.isPressed = widget.appBarNotifier.indexMenu == widget.index;
     final icon = Icon(
       widget.isPressed ? widget.iconPressed : widget.iconDefault,
       size: 26,

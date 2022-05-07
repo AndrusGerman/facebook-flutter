@@ -1,8 +1,11 @@
+import 'package:facebook_flutter/start_router/controller/app_bar_notifier.dart';
 import 'package:facebook_flutter/start_router/ui/widgets/app_bar_icons.dart';
 import 'package:flutter/material.dart';
 
 class AppBarAllContent extends StatelessWidget {
-  const AppBarAllContent({Key? key}) : super(key: key);
+  final AppBarClickMenuNotifier appBarNotifier;
+  const AppBarAllContent({Key? key, required this.appBarNotifier})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,12 @@ class AppBarAllContent extends StatelessWidget {
             )
           ], color: Colors.white),
           child: Stack(
-            children: const [AppBarTitle(), AppBarIconsContainer()],
+            children: [
+              const AppBarTitle(),
+              AppBarIconsContainer(
+                appBarNotifier: appBarNotifier,
+              )
+            ],
           ))
     ]);
   }
