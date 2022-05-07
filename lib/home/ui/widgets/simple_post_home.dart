@@ -61,6 +61,22 @@ class SimplePostHomeHeader extends StatelessWidget {
     const profileImg =
         UserCircleIMG(assets: AssetImage("assets/img/profile.png"), size: 45);
 
+    final timePost = Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: const [
+        Text(
+          "Just now ",
+          style: TextStyle(color: Colors.black45),
+        ),
+        Icon(
+          Icons.timelapse,
+          color: Colors.black45,
+          size: 12,
+        )
+      ],
+    );
+
     final postM = IntrinsicHeight(
       child: Row(children: [
         profileImg,
@@ -77,10 +93,7 @@ class SimplePostHomeHeader extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const Text(
-                  "Jost now ",
-                  style: TextStyle(color: Colors.black45),
-                ),
+                timePost
               ],
             ),
           ),
