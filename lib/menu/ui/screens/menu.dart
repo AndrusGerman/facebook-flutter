@@ -34,7 +34,11 @@ class TitleMenu extends StatelessWidget {
         child: Container(
       alignment: Alignment.bottomRight,
       child: const GlbalIconButtonTitle(
-          iconFirst: Icons.settings, iconLast: Icons.search),
+        iconFirst: Icons.settings,
+        iconLast: Icons.search,
+        paddingIcon: 13,
+        iconSize: 20,
+      ),
     ));
     final content = IntrinsicHeight(
       child: Row(

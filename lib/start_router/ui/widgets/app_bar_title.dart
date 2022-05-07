@@ -60,11 +60,13 @@ class AppBarTitle extends StatelessWidget {
             ),
           ),
           const Expanded(
+              child: Padding(
+            padding: EdgeInsets.only(right: 10),
             child: GlbalIconButtonTitle(
               iconFirst: Icons.search,
               iconLast: Icons.sms_sharp,
             ),
-          ),
+          )),
         ],
       ),
     );
