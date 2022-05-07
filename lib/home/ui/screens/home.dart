@@ -65,6 +65,7 @@ class HomeScrollAllHeaderPost extends StatelessWidget {
         MinitShorcutsHome(),
         SeparatorItemHome(),
         ShorcutsHome(),
+        SeparatorItemHome(),
       ],
     );
   }
