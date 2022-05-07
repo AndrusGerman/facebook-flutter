@@ -228,13 +228,31 @@ class SimplePostHomeActionsButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const color = Color.fromARGB(155, 0, 0, 0);
     return Expanded(
         child: Container(
       padding: const EdgeInsets.only(left: 25),
       alignment: Alignment.center,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [Icon(icon), Text(text)],
+        children: [
+          Icon(
+            icon,
+            color: color,
+            size: 23,
+          ),
+          Container(
+            child: Text(
+              text,
+              style: const TextStyle(
+                color: color,
+              ),
+            ),
+            margin: const EdgeInsets.only(
+              left: 2.5,
+            ),
+          )
+        ],
       ),
     ));
   }
