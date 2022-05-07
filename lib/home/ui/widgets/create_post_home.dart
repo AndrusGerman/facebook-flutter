@@ -42,7 +42,7 @@ class HomePostWidget extends StatelessWidget {
     );
     return Container(
       child: content,
-      margin: const EdgeInsets.only(top: 116),
+      margin: const EdgeInsets.only(top: 115),
     );
   }
 }
