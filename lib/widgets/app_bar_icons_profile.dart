@@ -50,13 +50,14 @@ class _AppBarIconProfileButtonState extends State<AppBarIconProfileButton> {
         shape: BoxShape.circle,
         color: widget.isPressed ? Colors.blue : blackColor,
       ),
+      margin: EdgeInsets.symmetric(vertical: 2.4),
     );
 
     final menuProfileBadget = Container(
       child: Icon(
         Icons.menu,
         color: widget.isPressed ? Colors.blue : Colors.white,
-        size: 16,
+        size: 15,
       ),
       decoration: BoxDecoration(
         border: Border.all(
