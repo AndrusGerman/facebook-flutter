@@ -99,6 +99,7 @@ class SimplePostHomeImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 240,
+      margin: const EdgeInsets.only(bottom: 8),
       decoration: BoxDecoration(
         image: DecorationImage(
           image: NetworkImage("https://picsum.photos/id/$index/400/250"),
