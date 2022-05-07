@@ -1,3 +1,4 @@
+import 'package:facebook_flutter/widgets/app_bar_icons_blue_bar.dart';
 import 'package:facebook_flutter/widgets/app_bar_notifier.dart';
 import 'package:facebook_flutter/widgets/user_circle_img.dart';
 import 'package:flutter/material.dart';
@@ -33,16 +34,8 @@ class _AppBarIconProfileButtonState extends State<AppBarIconProfileButton> {
 
   @override
   Widget build(BuildContext context) {
-    final blueBar = Container(
-      margin: const EdgeInsets.only(top: 36),
-      decoration: const BoxDecoration(
-          color: Colors.blue,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(5),
-            topRight: Radius.circular(5),
-          )),
-    );
-    final blackColor = Color.fromARGB(255, 121, 121, 121);
+    const blueBar = AppBarIconstBlueBar();
+    const blackColor = Color.fromARGB(255, 121, 121, 121);
 
     final img =
         UserCircleIMG(assets: AssetImage("assets/img/profile.png"), size: 45);

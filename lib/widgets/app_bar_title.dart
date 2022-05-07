@@ -9,7 +9,7 @@ class AppBarAllContent extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     return Stack(children: [
       Container(
-          height: 150,
+          height: 153,
           width: screenWidth,
           //color: Colors.amber,
           decoration: const BoxDecoration(boxShadow: [

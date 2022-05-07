@@ -1,3 +1,4 @@
+import 'package:facebook_flutter/widgets/app_bar_icons_blue_bar.dart';
 import 'package:facebook_flutter/widgets/app_bar_icons_profile.dart';
 import 'package:facebook_flutter/widgets/app_bar_notifier.dart';
 import 'package:flutter/material.dart';
@@ -116,15 +117,7 @@ class _AppBarIconButtonState extends State<AppBarIconButton> {
       color: widget.isPressed ? Colors.blue : Color.fromARGB(192, 0, 0, 0),
     );
 
-    final blueBar = Container(
-      margin: const EdgeInsets.only(top: 36),
-      decoration: const BoxDecoration(
-          color: Colors.blue,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(5),
-            topRight: Radius.circular(5),
-          )),
-    );
+    const blueBar = AppBarIconstBlueBar();
 
     final content = Container(
       height: 60,
