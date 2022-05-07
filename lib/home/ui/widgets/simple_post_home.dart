@@ -23,8 +23,26 @@ class SimplePostHome extends StatelessWidget {
           userName: userName,
         ),
         SimplePostHomeImage(index: index),
+        const SimplePostItemDivider(),
         const SimplePostHomeActions(),
       ],
+    );
+  }
+}
+
+class SimplePostItemDivider extends StatelessWidget {
+  const SimplePostItemDivider({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 0.5,
+      //color: Colors.black,
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 2),
+      //width: double.infinity,
+      decoration: const BoxDecoration(
+        color: Color.fromARGB(68, 75, 75, 75),
+      ),
     );
   }
 }
