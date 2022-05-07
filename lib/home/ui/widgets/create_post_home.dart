@@ -1,4 +1,4 @@
-import 'package:facebook_flutter/start_router/ui/widgets/user_circle_img.dart';
+import 'package:facebook_flutter/widget/user_circle_img.dart';
 import 'package:flutter/material.dart';
 
 class HomePostWidget extends StatelessWidget {
