@@ -23,7 +23,7 @@ class SimplePostHome extends StatelessWidget {
           userName: userName,
         ),
         SimplePostHomeImage(index: index),
-        SimplePostHomeActions(),
+        const SimplePostHomeActions(),
       ],
     );
   }
@@ -137,6 +137,16 @@ class SimplePostHomeActions extends StatelessWidget {
     return Container(
       height: 50,
       child: actions,
+      decoration: const BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromARGB(137, 204, 204, 204),
+            blurRadius: 0.5,
+            offset: Offset(1, 1),
+          ),
+        ],
+        color: Colors.white,
+      ),
     );
   }
 }
