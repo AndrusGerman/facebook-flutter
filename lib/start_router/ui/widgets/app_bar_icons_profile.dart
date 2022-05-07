@@ -24,7 +24,7 @@ class _AppBarIconProfileButtonState extends State<AppBarIconProfileButton> {
   void initState() {
     widget.appBarNotifier.addListener(() {
       if ((widget.appBarNotifier.indexMenu != widget.index) && isPressed) {
-        setPressedMode(false);
+        setState(() {});
       }
     });
     super.initState();
@@ -32,10 +32,12 @@ class _AppBarIconProfileButtonState extends State<AppBarIconProfileButton> {
 
   @override
   Widget build(BuildContext context) {
+    isPressed = widget.index == widget.appBarNotifier.indexMenu;
+
     const blueBar = AppBarIconstBlueBar();
     const blackColor = Color.fromARGB(255, 121, 121, 121);
 
-    final img =
+    const img =
         UserCircleIMG(assets: AssetImage("assets/img/profile.png"), size: 45);
 
     final profileImg = Container(
@@ -96,17 +98,11 @@ class _AppBarIconProfileButtonState extends State<AppBarIconProfileButton> {
     ));
   }
 
-  setPressedMode(bool mode) {
-    setState(() {
-      isPressed = mode;
-    });
-  }
-
   onPressed() {
     if (isPressed) {
       return;
     }
-    setPressedMode(true);
+    setState(() {});
     widget.appBarNotifier.setMenuClick(widget.index);
   }
 }
