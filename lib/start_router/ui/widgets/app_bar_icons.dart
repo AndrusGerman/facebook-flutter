@@ -1,6 +1,6 @@
-import 'package:facebook_flutter/widgets/app_bar_icons_blue_bar.dart';
-import 'package:facebook_flutter/widgets/app_bar_icons_profile.dart';
-import 'package:facebook_flutter/widgets/app_bar_notifier.dart';
+import 'package:facebook_flutter/start_router/controller/app_bar_notifier.dart';
+import 'package:facebook_flutter/start_router/ui/widgets/app_bar_icons_blue_bar.dart';
+import 'package:facebook_flutter/start_router/ui/widgets/app_bar_icons_profile.dart';
 import 'package:flutter/material.dart';
 
 class AppBarIconsContainer extends StatefulWidget {
@@ -11,10 +11,10 @@ class AppBarIconsContainer extends StatefulWidget {
 }
 
 class _AppBarIconsContainerState extends State<AppBarIconsContainer> {
-  late AppBarClickNotifier _appBarNotifier;
+  late AppBarClickMenuNotifier _appBarNotifier;
   @override
   void initState() {
-    _appBarNotifier = AppBarClickNotifier();
+    _appBarNotifier = AppBarClickMenuNotifier();
     // TODO: implement initState
     super.initState();
   }
@@ -82,7 +82,7 @@ class AppBarIconButton extends StatefulWidget {
   final IconData iconPressed;
   late bool isPressed;
   final int index;
-  final AppBarClickNotifier appBarNotifier;
+  final AppBarClickMenuNotifier appBarNotifier;
   AppBarIconButton({
     Key? key,
     required this.iconDefault,

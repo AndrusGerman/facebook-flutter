@@ -1,4 +1,4 @@
-import 'package:facebook_flutter/widgets/user_circle_img.dart';
+import 'package:facebook_flutter/start_router/ui/widgets/user_circle_img.dart';
 import 'package:flutter/material.dart';
 
 class ShorcutsHomeStories extends StatelessWidget {

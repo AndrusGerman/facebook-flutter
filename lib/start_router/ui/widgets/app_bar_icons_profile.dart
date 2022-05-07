@@ -1,12 +1,12 @@
-import 'package:facebook_flutter/widgets/app_bar_icons_blue_bar.dart';
-import 'package:facebook_flutter/widgets/app_bar_notifier.dart';
-import 'package:facebook_flutter/widgets/user_circle_img.dart';
+import 'package:facebook_flutter/start_router/controller/app_bar_notifier.dart';
+import 'package:facebook_flutter/start_router/ui/widgets/app_bar_icons_blue_bar.dart';
+import 'package:facebook_flutter/start_router/ui/widgets/user_circle_img.dart';
 import 'package:flutter/material.dart';
 
 class AppBarIconProfileButton extends StatefulWidget {
   late bool isPressed;
   final int index;
-  final AppBarClickNotifier appBarNotifier;
+  final AppBarClickMenuNotifier appBarNotifier;
   AppBarIconProfileButton({
     Key? key,
     required this.index,
