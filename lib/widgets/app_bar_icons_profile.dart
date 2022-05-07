@@ -44,27 +44,27 @@ class _AppBarIconProfileButtonState extends State<AppBarIconProfileButton> {
       child: img,
       decoration: BoxDecoration(
         border: Border.all(
-          color: blackColor,
+          color: widget.isPressed ? Colors.blue : blackColor,
           width: 2,
         ),
         shape: BoxShape.circle,
-        color: blackColor,
+        color: widget.isPressed ? Colors.blue : blackColor,
       ),
     );
 
     final menuProfileBadget = Container(
-      child: const Icon(
+      child: Icon(
         Icons.menu,
-        color: Colors.white,
+        color: widget.isPressed ? Colors.blue : Colors.white,
         size: 16,
       ),
       decoration: BoxDecoration(
         border: Border.all(
-          color: Colors.white,
+          color: widget.isPressed ? Colors.blue : Colors.white,
           width: 1,
         ),
         shape: BoxShape.circle,
-        color: blackColor,
+        color: widget.isPressed ? Colors.white : blackColor,
       ),
       //alignment: Alignment.center,
     );
