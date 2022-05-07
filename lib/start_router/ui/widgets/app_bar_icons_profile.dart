@@ -4,14 +4,12 @@ import 'package:facebook_flutter/start_router/ui/widgets/user_circle_img.dart';
 import 'package:flutter/material.dart';
 
 class AppBarIconProfileButton extends StatefulWidget {
-  late bool isPressed;
   final int index;
   final AppBarClickMenuNotifier appBarNotifier;
-  AppBarIconProfileButton({
+  const AppBarIconProfileButton({
     Key? key,
     required this.index,
     required this.appBarNotifier,
-    this.isPressed = false,
   }) : super(key: key);
 
   @override
@@ -20,15 +18,15 @@ class AppBarIconProfileButton extends StatefulWidget {
 }
 
 class _AppBarIconProfileButtonState extends State<AppBarIconProfileButton> {
+  late bool isPressed = false;
+
   @override
   void initState() {
     widget.appBarNotifier.addListener(() {
-      if ((widget.appBarNotifier.indexMenu != widget.index) &&
-          widget.isPressed) {
+      if ((widget.appBarNotifier.indexMenu != widget.index) && isPressed) {
         setPressedMode(false);
       }
     });
-    // TODO: implement initState
     super.initState();
   }
 
@@ -44,11 +42,11 @@ class _AppBarIconProfileButtonState extends State<AppBarIconProfileButton> {
       child: img,
       decoration: BoxDecoration(
         border: Border.all(
-          color: widget.isPressed ? Colors.blue : blackColor,
+          color: isPressed ? Colors.blue : blackColor,
           width: 2,
         ),
         shape: BoxShape.circle,
-        color: widget.isPressed ? Colors.blue : blackColor,
+        color: isPressed ? Colors.blue : blackColor,
       ),
       margin: EdgeInsets.symmetric(vertical: 2.4),
     );
@@ -56,16 +54,16 @@ class _AppBarIconProfileButtonState extends State<AppBarIconProfileButton> {
     final menuProfileBadget = Container(
       child: Icon(
         Icons.menu,
-        color: widget.isPressed ? Colors.blue : Colors.white,
+        color: isPressed ? Colors.blue : Colors.white,
         size: 15,
       ),
       decoration: BoxDecoration(
         border: Border.all(
-          color: widget.isPressed ? Colors.blue : Colors.white,
+          color: isPressed ? Colors.blue : Colors.white,
           width: 1,
         ),
         shape: BoxShape.circle,
-        color: widget.isPressed ? Colors.white : blackColor,
+        color: isPressed ? Colors.white : blackColor,
       ),
       //alignment: Alignment.center,
     );
@@ -79,7 +77,7 @@ class _AppBarIconProfileButtonState extends State<AppBarIconProfileButton> {
       height: 60,
       child: Stack(
         children: [
-          widget.isPressed ? blueBar : Container(),
+          isPressed ? blueBar : Container(),
           Container(
             alignment: Alignment.center,
             child: Stack(children: [
@@ -100,12 +98,12 @@ class _AppBarIconProfileButtonState extends State<AppBarIconProfileButton> {
 
   setPressedMode(bool mode) {
     setState(() {
-      widget.isPressed = mode;
+      isPressed = mode;
     });
   }
 
   onPressed() {
-    if (widget.isPressed) {
+    if (isPressed) {
       return;
     }
     setPressedMode(true);
