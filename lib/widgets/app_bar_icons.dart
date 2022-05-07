@@ -113,8 +113,9 @@ class _AppBarIconButtonState extends State<AppBarIconButton> {
   Widget build(BuildContext context) {
     final icon = Icon(
       widget.isPressed ? widget.iconPressed : widget.iconDefault,
-      size: 32,
-      color: widget.isPressed ? Colors.blue : Color.fromARGB(192, 0, 0, 0),
+      size: 30,
+      color:
+          widget.isPressed ? Colors.blue : Color.fromARGB(255, 119, 119, 119),
     );
 
     const blueBar = AppBarIconstBlueBar();
