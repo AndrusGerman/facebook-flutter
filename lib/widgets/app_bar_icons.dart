@@ -1,3 +1,4 @@
+import 'package:facebook_flutter/widgets/app_bar_icons_profile.dart';
 import 'package:facebook_flutter/widgets/app_bar_notifier.dart';
 import 'package:flutter/material.dart';
 
@@ -61,9 +62,7 @@ class _AppBarIconsContainerState extends State<AppBarIconsContainer> {
             index: 4,
             appBarNotifier: _appBarNotifier,
           ),
-          AppBarIconButton(
-            iconPressed: Icons.person,
-            iconDefault: Icons.person_outlined,
+          AppBarIconProfileButton(
             index: 5,
             appBarNotifier: _appBarNotifier,
           ),
