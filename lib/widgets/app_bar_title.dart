@@ -69,8 +69,8 @@ class HomeTitleIconsListPrimari extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const sizeIcon = 27.5;
-    const circleColor = Color.fromARGB(88, 158, 158, 158);
+    const sizeIcon = 24.0;
+    const circleColor = Color.fromARGB(255, 236, 236, 236);
     const search = CircleAvatar(
       backgroundColor: circleColor,
       child: Icon(
