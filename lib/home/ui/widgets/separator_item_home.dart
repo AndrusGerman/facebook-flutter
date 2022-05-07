@@ -7,7 +7,7 @@ class SeparatorItemHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 10,
-      color: const Color.fromARGB(141, 158, 158, 158),
+      color: Color.fromARGB(110, 158, 158, 158),
     );
   }
 }
