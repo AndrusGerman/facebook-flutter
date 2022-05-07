@@ -22,6 +22,9 @@ class ShorcutsHomeStories extends StatelessWidget {
           StorieContainerBox(
             child: StorieFriendsBox(),
           ),
+          StorieContainerBox(
+            child: StorieFriendsBox(),
+          )
         ],
       ),
       height: 180,
