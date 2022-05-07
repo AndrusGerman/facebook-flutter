@@ -3,19 +3,24 @@ import 'package:flutter/material.dart';
 class GlbalIconButtonTitle extends StatelessWidget {
   final IconData iconFirst;
   final IconData iconLast;
-  const GlbalIconButtonTitle(
-      {Key? key, required this.iconFirst, required this.iconLast})
-      : super(key: key);
+  final double paddingIcon;
+  final double iconSize;
+  const GlbalIconButtonTitle({
+    Key? key,
+    required this.iconFirst,
+    required this.iconLast,
+    this.paddingIcon = 15,
+    this.iconSize = 24,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    const sizeIcon = 24.0;
     const circleColor = Color.fromARGB(255, 236, 236, 236);
     final iconFirstCircle = CircleAvatar(
       backgroundColor: circleColor,
       child: Icon(
         iconFirst,
-        size: sizeIcon,
+        size: iconSize,
         color: Colors.black,
       ),
     );
@@ -24,7 +29,7 @@ class GlbalIconButtonTitle extends StatelessWidget {
       backgroundColor: circleColor,
       child: Icon(
         iconLast,
-        size: sizeIcon,
+        size: iconSize,
         color: Colors.black,
       ),
     );
@@ -35,13 +40,10 @@ class GlbalIconButtonTitle extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Padding(
-            padding: const EdgeInsets.only(right: 15),
+            padding: EdgeInsets.only(right: paddingIcon),
             child: iconFirstCircle,
           ),
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: iconLastCircle,
-          )
+          iconLastCircle
         ],
       ),
     );
