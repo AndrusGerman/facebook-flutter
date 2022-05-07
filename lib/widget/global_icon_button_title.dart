@@ -11,19 +11,19 @@ class GlbalIconButtonTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     const sizeIcon = 24.0;
     const circleColor = Color.fromARGB(255, 236, 236, 236);
-    const iconFirstCircle = CircleAvatar(
+    final iconFirstCircle = CircleAvatar(
       backgroundColor: circleColor,
       child: Icon(
-        Icons.search,
+        iconFirst,
         size: sizeIcon,
         color: Colors.black,
       ),
     );
 
-    const iconLastCircle = CircleAvatar(
+    final iconLastCircle = CircleAvatar(
       backgroundColor: circleColor,
       child: Icon(
-        Icons.sms_sharp,
+        iconLast,
         size: sizeIcon,
         color: Colors.black,
       ),
@@ -33,13 +33,13 @@ class GlbalIconButtonTitle extends StatelessWidget {
       alignment: Alignment.topLeft,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
-        children: const [
+        children: [
           Padding(
-            padding: EdgeInsets.only(right: 15),
+            padding: const EdgeInsets.only(right: 15),
             child: iconFirstCircle,
           ),
           Padding(
-            padding: EdgeInsets.only(right: 10),
+            padding: const EdgeInsets.only(right: 10),
             child: iconLastCircle,
           )
         ],
