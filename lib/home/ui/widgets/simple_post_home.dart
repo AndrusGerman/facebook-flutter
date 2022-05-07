@@ -70,7 +70,7 @@ class SimplePostHomeHeader extends StatelessWidget {
           style: TextStyle(color: Colors.black45),
         ),
         Icon(
-          Icons.timelapse,
+          Icons.public,
           color: Colors.black45,
           size: 12,
         )
@@ -97,12 +97,13 @@ class SimplePostHomeHeader extends StatelessWidget {
               ],
             ),
           ),
-        )
+        ),
+        const SimplePostHomeManager(),
       ], crossAxisAlignment: CrossAxisAlignment.stretch),
     );
 
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Column(
         children: [
           postM,
@@ -119,6 +120,41 @@ class SimplePostHomeHeader extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+}
+
+class SimplePostHomeManager extends StatelessWidget {
+  const SimplePostHomeManager({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    const color = Color.fromARGB(255, 92, 92, 92);
+
+    final managerPost = Container(
+      child: const Icon(
+        Icons.more_horiz_sharp,
+        color: color,
+        size: 21,
+      ),
+      margin: const EdgeInsets.only(right: 20),
+    );
+
+    final removePost = Container(
+      child: const Icon(
+        Icons.cancel,
+        color: Colors.white,
+        size: 20,
+      ),
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        color: color,
+      ),
+    );
+
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [managerPost, removePost],
     );
   }
 }
